@@ -1,0 +1,48 @@
+general {
+        output_format = "i3bar"
+        colors = false
+        markup = pango
+        interval = 5
+        color_good = '#2f343f'
+        color_degraded = '#ebcb8b'
+	color_bad = '#ba5e57'
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "disk /"
+order += "ethernet enp34s0"
+order += "volume master"
+order += "tztime local"
+
+cpu_usage {
+        format = "♨ CPU: %usage"
+}
+
+memory {
+        format = " RAM: %used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+disk "/" {
+        format = "<span>  %free Free </span>"
+}
+
+ethernet enp34s0 {
+        format_up = "<span>  Connected </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+}
+
+volume master {
+        format = "<span>  %volume </span>"
+        format_muted = "<span background='#88c0d0'>  Muted </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+        format = "<span> %time </span>"
+        format_time = " %a %-d %b %H:%M"
+}
