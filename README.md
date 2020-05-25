@@ -1,1 +1,1 @@
-Maneged by https://github.com/twpayne/chezmoi
+Managed by https://github.com/twpayne/chezmoi
