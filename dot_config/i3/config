@@ -122,6 +122,18 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Workspaces assignments
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-0
+workspace 6 output DP-0
+workspace 7 output DP-0
+workspace 8 output DP-0
+workspace 9 output DP-0
+workspace 0 output DP-0
+
 # Windows assignments
 # assign [class="Firefox"] $ws1
 # assign [class="jetbrains-idea"] $ws2
@@ -136,7 +148,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # for_window [class="Blueman-manager"] move scratchpad
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+w reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -183,7 +195,7 @@ bindsym $mod+minus scratchpad show
 
 # Pulse Audio controls
 # increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume set-sink-volume alsa_output.pci-0000_02_02.0.analog-stereo9 0 +5% 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 #decrease sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 # mute sound
@@ -202,7 +214,7 @@ exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
 
 # Keyboard layout
-exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle'"
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
 
 # Gaps
 gaps inner 10
