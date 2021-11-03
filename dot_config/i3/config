@@ -201,6 +201,9 @@ exec --no-startup-id dunst
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
 
+# Keyboard layout
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle'"
+
 # Gaps
 gaps inner 10
 gaps outer -4
