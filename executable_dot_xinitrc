@@ -1,0 +1,7 @@
+xset s off
+xset -dpms
+xset s noblank 
+
+nvidia-settings --load-config-only -a "[gpu:0]/GPUPowerMizerMode=1" -a "[gpu:0]/GPUMemoryTransferRateOffset[3]=1000"
+
+exec dbus-launch i3
