@@ -1,7 +1,17 @@
+# disable screen saver
 xset s off
-xset -dpms
+# don't blank the video device
 xset s noblank 
+# disable Energy Star features.
+xset -dpms
 
-nvidia-settings --load-config-only -a "[gpu:0]/GPUPowerMizerMode=1" -a "[gpu:0]/GPUMemoryTransferRateOffset[3]=1000"
+# set mouse sensitivity
+xset m 1/100 0
+
+# enable NVIDIA performance mode
+if type "nvidia-settings"; then
+  nvidia-settings --load-config-only -a "[gpu:0]/GPUPowerMizerMode=1" -a "[gpu:0]/GPUMemoryTransferRateOffset[3]=1000"
+fi
 
 exec dbus-launch i3
+
