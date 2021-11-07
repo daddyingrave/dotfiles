@@ -119,3 +119,4 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/daddyingrave/.sdkman"
 [[ -s "/home/daddyingrave/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daddyingrave/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_OFFLINE_MODE=false

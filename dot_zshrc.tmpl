@@ -1,5 +1,5 @@
 # PATH
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/home/daddyingrave/Programs/Telegram:$PATH
+export PATH=/usr/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:/home/daddyingrave/Programs/Telegram:$PATH
 
 # oh-my-zsh location
 export ZSH="/home/daddyingrave/.oh-my-zsh"
@@ -39,8 +39,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR='nvim'
-export GDK_SCALE=1
-export QT_SCALE_FACTOR=1.2
 export _JAVA_AWT_WM_NONREPARENTING=1
 wmname LG3D
 
@@ -52,4 +50,25 @@ connect_to() {
 # Aliases
 alias vim="nvim"
 alias ssh="kitty +kitten ssh"
+
+# Locale (hmmm)
+export LANG=en_GB.UTF-8
+export LC_CTYPE="en_GB.UTF-8"
+export LC_NUMERIC="en_GB.UTF-8"
+export LC_TIME="en_GB.UTF-8"
+export LC_COLLATE="en_GB.UTF-8"
+export LC_MONETARY="en_GB.UTF-8"
+export LC_MESSAGES="en_GB.UTF-8"
+export LC_PAPER="en_GB.UTF-8"
+export LC_NAME="en_GB.UTF-8"
+export LC_ADDRESS="en_GB.UTF-8"
+export LC_TELEPHONE="en_GB.UTF-8"
+export LC_MEASUREMENT="en_GB.UTF-8"
+export LC_IDENTIFICATION="en_GB.UTF-8"
+
+# sdkman
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/daddyingrave/.sdkman"
+[[ -s "/home/daddyingrave/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daddyingrave/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_OFFLINE_MODE=false
 
