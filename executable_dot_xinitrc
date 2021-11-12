@@ -18,6 +18,9 @@ fi
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 
+# high DPI scaling for QT apps
+export QT_SCALE_FACTOR=1.5
+
 # set default terminal app
 export TERMINAL=kitty
 
