@@ -135,17 +135,20 @@ workspace 9 output DP-0
 workspace 10 output DP-0
 
 # Windows assignments
-# assign [class="Firefox"] $ws1
-# assign [class="jetbrains-idea"] $ws2
-# assign [class="TelegramDesktop"] $ws4
-# assign [class="Spotify"] $ws8
+assign [class="Firefox"] $ws1
+assign [class="Telegram"] $ws6
+assign [class="Spotify"] $ws10
 
 # Windows modifications
-# for_window [class="Firefox"] move container to workspace $ws1
-# for_window [class="Spotify"] move container to workspace $ws8
-# for_window [class="jetbrains-toolbox"] move scratchpad
-# for_window [class="Blueman-manager"] floating enable
-# for_window [class="Blueman-manager"] move scratchpad
+for_window [class="Firefox"] move container to workspace $ws1
+# TODO spotify for_window [id="0x3200001"] move container to workspace $ws10
+for_window [class="Telegram"] floating enable
+for_window [class="Telegram"] move position 3855 65 
+for_window [class="Telegram"] resize set 1895 2070
+for_window [class="JetBrains Toolbox"] floating enable
+for_window [class="JetBrains Toolbox"] move scratchpad
+for_window [class="Blueman-manager"] floating enable
+for_window [class="Blueman-manager"] move scratchpad
 
 # reload the configuration file
 bindsym $mod+Shift+w reload
@@ -212,9 +215,9 @@ bindsym $mod+minus scratchpad show
 
 # Pulse Audio controls
 # increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 #decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 # mute sound
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
@@ -229,6 +232,9 @@ exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
 exec --no-startup-id dunst
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
+exec --no-startup-id flatpak run com.spotify.Client 
+exec --no-startup-id ~/Apps/Telegram/Telegram 
+exec --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox 
 
 # Keyboard layout
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
