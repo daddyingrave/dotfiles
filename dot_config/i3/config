@@ -29,7 +29,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (rofi)
 bindsym $mod+d exec rofi -show drun 
-bindsym $mod+Tab exec rofi window 
+bindsym $mod+Tab exec rofi -show window 
 
 # change focus
 bindsym $mod+h focus left
@@ -132,7 +132,7 @@ workspace 6 output DP-0
 workspace 7 output DP-0
 workspace 8 output DP-0
 workspace 9 output DP-0
-workspace 0 output DP-0
+workspace 10 output DP-0
 
 # Windows assignments
 # assign [class="Firefox"] $ws1
@@ -188,6 +188,23 @@ bindsym $mod+r mode "resize"
 #         font pango:Noto Sans 11
 # }
 
+
+bar {
+    font pango: NotoMono Nerd Font, Font Awesome 5 Free 12
+    position top
+    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+    tray_output none 
+}
+
 # My bindings
 # Scratchpad management
 bindsym $mod+Shift+minus move scratchpad
@@ -209,13 +226,13 @@ bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 
 # Autostart applications
 exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
-exec --no-startup-id ~/.config/polybar/blocks/launch.sh >~/polybar.log 2>&1
 exec --no-startup-id dunst
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
 
 # Keyboard layout
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
+exec --no-startup-id kbdd
 
 # Gaps
 gaps inner 10
