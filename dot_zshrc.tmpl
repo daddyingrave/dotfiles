@@ -1,8 +1,8 @@
 # PATH
-export PATH=/usr/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:/home/daddyingrave/Programs/Telegram:$PATH
+export PATH=/usr/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$HOME/Programs/Telegram:$PATH
 
 # oh-my-zsh location
-export ZSH="/home/daddyingrave/.oh-my-zsh"
+export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
 
 # Theme
@@ -17,7 +17,6 @@ plugins=(
   git 
   docker 
   docker-compose
-  chezmoi
   ansible
   brew
   cp
@@ -70,6 +69,6 @@ export LC_IDENTIFICATION="en_GB.UTF-8"
 # sdkman
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/daddyingrave/.sdkman"
-[[ -s "/home/daddyingrave/.sdkman/bin/sdkman-init.sh" ]] && source "/home/daddyingrave/.sdkman/bin/sdkman-init.sh"
+[[ -s "{{ .chezmoi.homeDir }}/.sdkman/bin/sdkman-init.sh" ]] && source "{{ .chezmoi.homeDir }}/.sdkman/bin/sdkman-init.sh"
 export SDKMAN_OFFLINE_MODE=false
 

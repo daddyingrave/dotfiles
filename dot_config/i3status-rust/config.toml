@@ -1,0 +1,47 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block = "dnf"
+interval = 1800
+format = "{count:1}"
+format_singular = "{count:1}"
+format_up_to_date = ""
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
+on_click = "dnf list -q --upgrades | tail -n +2 | rofi -dmenu"
+
+[[block]]
+block = "bluetooth"
+mac = "00:1A:7D:DA:71:03"
+format = "{percentage}"
+hide_disconnected = true
+
+[[block]]
+block = "cpu"
+interval = 1
+warning = 50
+critical = 90
+
+[[block]]
+block = "networkmanager"
+device_format = "{icon}"
+on_click = "kitty -e nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+
+[[block]]
+block = "keyboard_layout"
+driver = "kbddbus"
+
+[[block]]
+block = "sound"
+step_width = 3
+
+[[block]]
+block = "notify"
+format = ""
+
+[[block]]
+block = "time"
+interval = 5
+
