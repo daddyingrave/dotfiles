@@ -1,0 +1,9 @@
+data:
+  user:
+    email: {{ (onepasswordItemFields "5hlzwfkpinvilgo44gjg6laowi").email.v | quote }}
+  ssh:
+    id_rsa_pub: |
+      {{ onepasswordDocument "7fh3srfnvwosfaojswqpqfbl3y" | indent 6 | trim }}
+    id_rsa: |
+      {{ onepasswordDocument "6gecwqrf4l66xvfsfs45opoqoi" | indent 6 | trim }}
+

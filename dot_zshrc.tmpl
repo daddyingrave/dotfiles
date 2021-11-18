@@ -43,7 +43,7 @@ wmname LG3D
 
 # Functions
 connect_to() {
-        sshpass -p '{{ (onepassword "gbzdiz3ffftcd3zsrydvonjoqu").details.password }}' ssh -o StrictHostKeyChecking=no root@$1
+        sshpass -p '{{ .top_secret }}' ssh -o StrictHostKeyChecking=no root@$1
 }
 
 # Aliases
