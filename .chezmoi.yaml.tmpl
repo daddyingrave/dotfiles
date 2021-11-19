@@ -1,4 +1,5 @@
 data:
+  top_secret: {{ (onepassword "gbzdiz3ffftcd3zsrydvonjoqu").details.password }} 
   user:
     email: {{ (onepasswordItemFields "5hlzwfkpinvilgo44gjg6laowi").email.v | quote }}
   ssh:
