@@ -1,10 +1,6 @@
 set $mod Mod4
 
-font pango: Noto Sans 10
-
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# Use Mouse+$mod to drag floating windows to their wanted position
+# mouse+$mod to drag floating windows 
 floating_modifier $mod
 
 # start a terminal
@@ -23,7 +19,6 @@ bindsym $mod+l focus right
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -35,7 +30,6 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -97,28 +91,28 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+shift+1 move container to workspace number $ws1
+bindsym $mod+shift+2 move container to workspace number $ws2
+bindsym $mod+shift+3 move container to workspace number $ws3
+bindsym $mod+shift+4 move container to workspace number $ws4
+bindsym $mod+shift+5 move container to workspace number $ws5
+bindsym $mod+shift+6 move container to workspace number $ws6
+bindsym $mod+shift+7 move container to workspace number $ws7
+bindsym $mod+shift+8 move container to workspace number $ws8
+bindsym $mod+shift+9 move container to workspace number $ws9
+bindsym $mod+shift+0 move container to workspace number $ws10
 
-# Workspaces assignments
-workspace "1" output DP-2 
-workspace "2" output DP-2
-workspace "3" output DP-2 
-workspace "4" output DP-2
-workspace "5" output DP-0 
-workspace "6" output DP-0
-workspace "7" output DP-0 
-workspace "8" output DP-0 
-workspace "9" output DP-0 
-workspace "10" output DP-0 
+# workspaces assignments
+workspace "1" output {{ .display.output_1 }} 
+workspace "2" output {{ .display.output_1 }}
+workspace "3" output {{ .display.output_1 }} 
+workspace "4" output {{ .display.output_1 }}
+workspace "5" output {{ .display.output_2 }} 
+workspace "6" output {{ .display.output_2 }}
+workspace "7" output {{ .display.output_2 }} 
+workspace "8" output {{ .display.output_2 }} 
+workspace "9" output {{ .display.output_2 }} 
+workspace "10" output {{ .display.output_2 }} 
 
 # Windows assignments
 assign [class="Firefox"] $ws1
@@ -214,8 +208,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Autostart applications
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
-#exec --no-startup-id autodisplay -config ~/.config/autodisplay.yaml
 exec --no-startup-id dunst
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
@@ -274,7 +268,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# Windows
+# Visual 
+font pango: Noto Sans 10
 title_align center
 new_window pixel 4
 

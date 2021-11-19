@@ -7,4 +7,7 @@ data:
       {{ onepasswordDocument "7fh3srfnvwosfaojswqpqfbl3y" | indent 6 | trim }}
     id_rsa: |
       {{ onepasswordDocument "6gecwqrf4l66xvfsfs45opoqoi" | indent 6 | trim }}
+  display:
+    output_1: {{ eq .chezmoi.username "daddyingrave" | ternary "DP-2" "primary" }}
+    output_2: {{ eq .chezmoi.username "daddyingrave" | ternary "DP-0" "primary" }}
 
