@@ -6,7 +6,7 @@ xset s noblank
 xset -dpms
 
 # set mouse sensitivity
-xset m 1/100 0
+xinput --set-prop {{ .mouse_id }} 'libinput Accel Speed' -0.35
 
 # enable NVIDIA performance mode
 if type "nvidia-settings"; then

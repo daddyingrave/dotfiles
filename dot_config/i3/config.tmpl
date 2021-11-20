@@ -116,15 +116,15 @@ workspace "10" output {{ .display.output_2 }}
 
 # Windows assignments
 assign [class="Firefox"] $ws1
-assign [class="Telegram"] $ws6
+assign [instance="Telegram"] $ws6
 assign [class="Spotify"] $ws10
 
 # Windows modifications
 for_window [class="Firefox"] move container to workspace $ws1
 for_window [instance="open.spotify.com"] move container to workspace $ws10
-for_window [class="Telegram"] floating enable
-for_window [class="Telegram"] move position 3855 65 
-for_window [class="Telegram"] resize set 1895 2070
+for_window [instance="Telegram"] floating enable
+for_window [instance="Telegram"] move position 3855 65 
+for_window [instance="Telegram"] resize set 1895 2070
 for_window [class="jetbrains-toolbox"] floating enable
 for_window [class="jetbrains-toolbox"] move scratchpad
 for_window [class="Blueman-manager"] floating enable
@@ -213,10 +213,9 @@ exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
 exec --no-startup-id dunst
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
-exec --no-startup-id flatpak run com.spotify.Client 
 exec --no-startup-id ~/Apps/Telegram/Telegram 
 exec --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox 
-exec --no-startup-id i3-msg 'workspace 10; exec google-chrome --app=https://open.spotify.com'
+exec --no-startup-id exec google-chrome --app=https://open.spotify.com
 
 # Keyboard layout
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
