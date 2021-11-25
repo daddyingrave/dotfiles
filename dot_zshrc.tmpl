@@ -1,3 +1,8 @@
+# Enable Powerlevel10k instant prompt. 
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # PATH
 export PATH=/usr/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$HOME/Programs/Telegram:$PATH
 
@@ -6,7 +11,7 @@ export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=7
 
 # Theme
-ZSH_THEME="avit"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # zsh configuration 
 DISABLE_UPDATE_PROMPT="true"
@@ -30,6 +35,8 @@ plugins=(
   systemd
   zsh-interactive-cd
   zsh-navigation-tools
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 autoload -U compinit && compinit
@@ -72,3 +79,4 @@ export SDKMAN_DIR="/home/daddyingrave/.sdkman"
 [[ -s "{{ .chezmoi.homeDir }}/.sdkman/bin/sdkman-init.sh" ]] && source "{{ .chezmoi.homeDir }}/.sdkman/bin/sdkman-init.sh"
 export SDKMAN_OFFLINE_MODE=false
 
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
