@@ -122,11 +122,14 @@ assign [class="Spotify"] $ws10
 # Windows modifications
 for_window [class="Firefox"] move container to workspace $ws1
 for_window [instance="open.spotify.com"] move container to workspace $ws10
-for_window [class="jetbrains-toolbox"] floating enable
+for_window [class="jetbrains-toolbox"] floating enable resize set 25ppt 50ppt
 for_window [class="jetbrains-toolbox"] move scratchpad
-for_window [class="Blueman-manager"] floating enable
+for_window [instance="jetbrains-idea"] layout tabbed
+for_window [instance="jetbrains-idea-ce"] layout tabbed
+for_window [class="Blueman-manager"] floating enable resize set 25ppt 50ppt
 for_window [class="Blueman-manager"] move scratchpad
-for_window [class="Pavucontrol"] floating enable
+for_window [class="Pavucontrol"] floating enable resize set 35ppt 50ppt 
+for_window [class="Org.gnome.Nautilus"] floating enable resize set 50ppt 50ppt 
 for_window [instance="Telegram"] layout tabbed
 for_window [class="zoom"] layout tabbed
 for_window [instance="app.ringcentral.com"] layout tabbed
