@@ -122,13 +122,16 @@ assign [class="Spotify"] $ws10
 # Windows modifications
 for_window [class="Firefox"] move container to workspace $ws1
 for_window [instance="open.spotify.com"] move container to workspace $ws10
-for_window [instance="Telegram"] floating enable
-for_window [instance="Telegram"] move position 3855 65 
-for_window [instance="Telegram"] resize set 1895 2070
 for_window [class="jetbrains-toolbox"] floating enable
 for_window [class="jetbrains-toolbox"] move scratchpad
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Blueman-manager"] move scratchpad
+for_window [class="Pavucontrol"] floating enable
+for_window [instance="Telegram"] layout tabbed
+for_window [class="zoom"] layout tabbed
+for_window [instance="app.ringcentral.com"] layout tabbed
+for_window [instance="outlook.office.com"] layout tabbed
+for_window [instance="www.notion.so"] layout tabbed
 
 # reload the configuration file
 bindsym $mod+Shift+w reload

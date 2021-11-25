@@ -7,9 +7,10 @@ configuration {
   dpi: 192;
   modi: [drun,run,window];
   show-icons: true;
-  font: "Noto Sans 14";
+  font: "Noto Sans 18";
   sidebar-mode: true;
 }
+element-icon { size: 3ch ; }
 * {
     selected-normal-foreground:  rgba ( 129, 147, 150, 100 % );
     foreground:                  rgba ( 129, 147, 150, 100 % );
@@ -42,6 +43,8 @@ configuration {
     selected-active-background:  rgba ( 0, 54, 66, 100 % );
 }
 window {
+    width:            var( width, 35%);
+    height:           var( height, 45%);
     background-color: @background;
     border:           0;
     padding:          15;

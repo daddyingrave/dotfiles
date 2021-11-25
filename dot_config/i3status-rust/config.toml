@@ -8,13 +8,7 @@ format = "{count:1}"
 format_singular = "{count:1}"
 format_up_to_date = ""
 critical_updates_regex = "(linux|linux-lts|linux-zen)"
-on_click = "dnf list -q --upgrades | tail -n +2 | rofi -dmenu"
-
-[[block]]
-block = "bluetooth"
-mac = "00:1A:7D:DA:71:03"
-format = "{percentage}"
-hide_disconnected = true
+on_click = "dnf list -q --upgrades | tail | awk '{print $1}' | rofi -dmenu"
 
 [[block]]
 block = "cpu"
@@ -32,6 +26,12 @@ interface_name_include = []
 [[block]]
 block = "keyboard_layout"
 driver = "kbddbus"
+
+[[block]]
+block = "bluetooth"
+mac = "00:1B:66:DF:BA:2F"
+format = "{percentage}"
+hide_disconnected = true
 
 [[block]]
 block = "sound"
