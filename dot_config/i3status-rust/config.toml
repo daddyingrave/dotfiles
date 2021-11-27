@@ -8,7 +8,7 @@ format = "{count:1}"
 format_singular = "{count:1}"
 format_up_to_date = ""
 critical_updates_regex = "(linux|linux-lts|linux-zen)"
-on_click = "dnf list -q --upgrades | tail | awk '{print $1}' | rofi -dmenu"
+on_click = "dnf list -q --upgrades | awk '{print $1}' | rofi -dmenu"
 
 [[block]]
 block = "cpu"
