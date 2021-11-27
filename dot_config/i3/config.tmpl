@@ -114,26 +114,34 @@ workspace "8" output {{ .display.output_2 }}
 workspace "9" output {{ .display.output_2 }} 
 workspace "10" output {{ .display.output_2 }} 
 
-# Windows assignments
-assign [class="Firefox"] $ws1
-assign [instance="Telegram"] $ws6
-assign [class="Spotify"] $ws10
+# Apps and windows modifications
+assign [instance="Telegram"] $ws9
+for_window [instance="Telegram"] layout tabbed
 
-# Windows modifications
-for_window [class="Firefox"] move container to workspace $ws1
+assign [class="zoom"] $ws9 
+for_window [class="zoom"] layout tabbed
+
+assign [instance="app.ringcentral.com"] $ws9 
+for_window [instance="app.ringcentral.com"] layout tabbed
+
+assign [instance="outlook.office.com"] $ws9 
+for_window [instance="outlook.office.com"] layout tabbed
+
+assign [class="Spotify"] $ws10
 for_window [instance="open.spotify.com"] move container to workspace $ws10
+
 for_window [class="jetbrains-toolbox"] floating enable resize set 25ppt 50ppt
 for_window [class="jetbrains-toolbox"] move scratchpad
+
 for_window [instance="jetbrains-idea"] layout tabbed
 for_window [instance="jetbrains-idea-ce"] layout tabbed
+
 for_window [class="Blueman-manager"] floating enable resize set 25ppt 50ppt
 for_window [class="Blueman-manager"] move scratchpad
+
 for_window [class="Pavucontrol"] floating enable resize set 35ppt 50ppt 
 for_window [class="Org.gnome.Nautilus"] floating enable resize set 50ppt 50ppt 
-for_window [instance="Telegram"] layout tabbed
-for_window [class="zoom"] layout tabbed
-for_window [instance="app.ringcentral.com"] layout tabbed
-for_window [instance="outlook.office.com"] layout tabbed
+
 for_window [instance="www.notion.so"] layout tabbed
 
 # reload the configuration file
