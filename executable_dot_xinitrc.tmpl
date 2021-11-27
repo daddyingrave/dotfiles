@@ -2,8 +2,8 @@
 xset s off
 # don't blank the video device
 xset s noblank 
-# disable Energy Star features.
-xset -dpms
+# Disable screen after 10 minutes 
+xset dpms 0 0 600
 
 # set mouse sensitivity
 xinput --set-prop {{ .mouse_id }} 'libinput Accel Speed' -0.35

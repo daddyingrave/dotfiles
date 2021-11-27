@@ -5,4 +5,3 @@ do
 	wmctrl -i -c $wId
 done
 
-killall kitty

@@ -148,8 +148,9 @@ for_window [instance="www.notion.so"] layout tabbed
 bindsym $mod+Shift+w reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Powermenu
+bindsym $mod+Shift+e exec ~/.scripts/menu.sh 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -222,7 +223,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Autostart applications
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock ~/.scripts/lock.sh
 exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
 exec --no-startup-id dunst
 exec --no-startup-id flameshot

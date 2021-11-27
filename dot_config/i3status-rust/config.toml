@@ -45,3 +45,8 @@ format = ""
 block = "time"
 interval = 5
 
+[[block]]
+block = "custom"
+command = "echo \uf011" 
+on_click = "~/.scripts/menu.sh"
+interval = "once"
