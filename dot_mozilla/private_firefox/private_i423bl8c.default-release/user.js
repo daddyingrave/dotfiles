@@ -9,4 +9,5 @@ user_pref("browser.startup.homepage",               "about:home");
 user_pref("browser.search.countryCode",				      "US");
 user_pref("browser.search.region",				          "US");
 user_pref("browser.search.geoip.url",				        "");
+user_pref("ui.key.menuAccessKeyFocuses",				    false);
 

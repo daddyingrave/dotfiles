@@ -21,6 +21,7 @@ case $chosen in
 	  ans=$(yes_prompt &)
 	  if [[ $ans == "$yes" ]]; then
       ~/.scripts/close_windows.sh
+      sleep 2
 	  	systemctl poweroff
     else
 	  	exit 0
@@ -30,6 +31,7 @@ case $chosen in
     ans=$(yes_prompt &)
 	  if [[ $ans == "$yes" ]]; then
       ~/.scripts/close_windows.sh
+      sleep 2
 	  	systemctl reboot 
     else
 	  	exit 0
@@ -47,6 +49,7 @@ case $chosen in
     ans=$(yes_prompt &)
 	  if [[ $ans == "$yes" ]]; then
       ~/.scripts/close_windows.sh
+      sleep 2
       i3-msg exit
     else
 	  	exit 0
