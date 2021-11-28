@@ -1,11 +1,9 @@
-{{- $mouseId := "" }} 
-{{- $mouseName:= "" }} 
+{{- $mouseName := "" }} 
 {{- if eq .chezmoi.username "daddyingrave" }}
 {{- $mouseName = "pointer:Logitech G603" }}
 {{- else }}
 {{- $mouseName = "pointer:TODO" }}
 {{- end }}
-{{- $mouseId := (output "xinput" "list" "--id-only" (printf "%s" $mouseName)) }}
 data:
   top_secret: {{ (onepassword "gbzdiz3ffftcd3zsrydvonjoqu").details.password }} 
   user:
@@ -18,5 +16,5 @@ data:
   display:
     output_1: {{ eq .chezmoi.username "daddyingrave" | ternary "DP-2" "primary" }}
     output_2: {{ eq .chezmoi.username "daddyingrave" | ternary "DP-0" "primary" }}
-  mouse_id: {{ $mouseId }}
+  mouse_name: {{ $mouseName }}
 
