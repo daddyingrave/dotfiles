@@ -147,6 +147,8 @@ for_window [class="Org.gnome.Nautilus"] floating enable resize set 50ppt 50ppt
 
 for_window [instance="www.notion.so"] layout tabbed
 
+for_window [instance="copyq"] floating enable, border pixel 0
+
 # reload the configuration file
 bindsym $mod+Shift+w reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -210,6 +212,7 @@ bar {
 # Scratchpad management
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
+bindsym $mod+x exec "copyq -e 'if (visible()) hide(); else showAt(1500, 100, 300, 500)'"
 
 # Pulse Audio controls
 # increase sound volume
@@ -229,6 +232,7 @@ bindsym XF86AudioPrev exec playerctl previous
 exec --no-startup-id xss-lock ~/.scripts/lock.sh
 exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
 exec --no-startup-id dunst
+exec --no-startup-id copyq
 exec --no-startup-id flameshot
 exec --no-startup-id blueman-manager
 exec --no-startup-id ~/Apps/Telegram/Telegram 
