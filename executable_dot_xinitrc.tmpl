@@ -6,7 +6,7 @@ xset s noblank
 xset dpms 0 0 600
 
 # set mouse sensitivity
-xinput --set-prop $(xinput list --id-only "{{ .mouse_name }}") 'libinput Accel Speed' -0.35
+xinput --set-prop $(xinput list | grep 'Logitech.*pointer' | cut -d= -f 2 | cut -f 1) 'libinput Accel Speed' -0.35
 
 # enable NVIDIA performance mode
 if type "nvidia-settings"; then
