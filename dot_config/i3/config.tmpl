@@ -1,8 +1,5 @@
 set $mod Mod4
 
-# Detect display configuration profile on startup
-exec --no-startup-id exec autorandr --change
-
 # mouse+$mod to drag floating windows 
 floating_modifier $mod
 
@@ -239,9 +236,15 @@ exec --no-startup-id ~/Apps/Telegram/Telegram
 exec --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox 
 exec --no-startup-id exec google-chrome --app=https://open.spotify.com
 
+# Detect display configuration profile on startup
+exec --no-startup-id exec autorandr --change
+
 # Keyboard layout
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
 exec --no-startup-id kbdd
+
+# Set mouse sensitivity
+exec "xinput --set-prop $(xinput list | grep 'Logitech.*pointer' | cut -d= -f 2 | cut -f 1) 'libinput Accel Speed' -0.35"
 
 default_floating_border none
 smart_borders no_gaps
