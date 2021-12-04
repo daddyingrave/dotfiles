@@ -50,6 +50,7 @@ full_format = " "
 [[block]]
 block = "time"
 interval = 5
+on_click = "gnome-calendar"
 
 [[block]]
 block = "custom"
