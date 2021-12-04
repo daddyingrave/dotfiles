@@ -1,5 +1,12 @@
-theme = "solarized-dark"
+theme = "native"
 icons = "awesome"
+
+[[block]]
+block = "networkmanager"
+device_format = "{icon}"
+on_click = "kitty -e nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
 
 [[block]]
 block = "dnf"
@@ -15,13 +22,6 @@ block = "cpu"
 interval = 1
 warning = 50
 critical = 90
-
-[[block]]
-block = "networkmanager"
-device_format = "{icon}"
-on_click = "kitty -e nmtui"
-interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
-interface_name_include = []
 
 [[block]]
 block = "keyboard_layout"
@@ -40,6 +40,12 @@ step_width = 3
 [[block]]
 block = "notify"
 format = ""
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}" 
+full_format = " " 
 
 [[block]]
 block = "time"

@@ -1,5 +1,8 @@
 set $mod Mod4
 
+# Detect display configuration profile on startup
+exec --no-startup-id exec autorandr --change
+
 # mouse+$mod to drag floating windows 
 floating_modifier $mod
 

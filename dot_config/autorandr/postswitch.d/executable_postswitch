@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+nitrogen --restore
+
+killall dunst
+
+i3-msg restart
+
+notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
+

@@ -2,12 +2,17 @@
 {{- if eq .chezmoi.username "daddyingrave" }}
 {{- $mouseName = "pointer:Logitech G603" }}
 {{- else }}
-{{- $mouseName = "pointer:TODO" }}
+{{- $mouseName = "pointer:Logitech MX Master 2S" }}
 {{- end }}
 data:
   top_secret: {{ (onepassword "gbzdiz3ffftcd3zsrydvonjoqu").details.password }} 
+  {{- if eq .chezmoi.username "daddyingrave" }}
   user:
     email: {{ (onepasswordItemFields "5hlzwfkpinvilgo44gjg6laowi").email.v | quote }}
+  {{- else }}
+  user:
+    email: {{ (onepasswordItemFields "xby3jx4enfzebt62iriv532cbu").email.v | quote }}
+  {{- end }}
   ssh:
     id_rsa_pub: |
       {{ onepasswordDocument "7fh3srfnvwosfaojswqpqfbl3y" | indent 6 | trim }}
