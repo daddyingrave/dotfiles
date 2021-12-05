@@ -89,5 +89,5 @@ user_pref("browser.toolbars.bookmarks.visibility",		"always");
 user_pref("browser.toolbars.bookmarks.showOtherBookmarks",		false);
 user_pref("distribution.fedora.bookmarksProcessed",		false);
 user_pref("browser.sessionstore.resume_session_once",		false);
-
+user_pref("widget.content.gtk-theme-override",		"Arc");
 
