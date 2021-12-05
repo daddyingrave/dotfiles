@@ -42,7 +42,7 @@ user_pref("browser.tabs.crashReporting.sendReport",		false);
 user_pref("browser.crashReports.unsubmittedCheck.enabled",	false);
 user_pref("dom.flyweb.enabled",					false);
 user_pref("privacy.userContext.enabled",			true);
-user_pref("privacy.resistFingerprinting",			true);
+user_pref("privacy.resistFingerprinting",			false);
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("extensions.webextensions.restrictedDomains", "");
 user_pref("browser.startup.blankWindow", false);
