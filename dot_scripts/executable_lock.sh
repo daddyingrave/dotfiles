@@ -21,6 +21,9 @@ fi
 # Disable notifications while locked
 pkill -u "$USER" -USR1 dunst
 
+# Set us keyboard layout
+dbus-send --dest=ru.gentoo.KbddService /ru/gentoo/KbddService ru.gentoo.kbdd.set_layout uint32:0
+
 i3lock --image=$TMPBG \
   --pointer=default \
   --ignore-empty-password \
