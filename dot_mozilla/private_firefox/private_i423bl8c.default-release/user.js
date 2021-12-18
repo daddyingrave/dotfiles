@@ -1,7 +1,7 @@
 user_pref("intl.accept_languages",				          "en-US, en");
 user_pref("intl.locale.matchOS",				            false);
 user_pref("browser.search.geoSpecificDefaults",			false);
-user_pref("clipboard.autocopy",					            false);
+user_pref("clipboard.autocopy",					            true);
 user_pref("javascript.use_us_english_locale",			  true);
 user_pref("browser.urlbar.placeholderName",         "DuckDuckGo");
 user_pref("browser.urlbar.suggest.searches",        false);
@@ -17,7 +17,7 @@ user_pref("dom.enable_performance",				false);
 user_pref("dom.netinfo.enabled",				false);
 user_pref("dom.battery.enabled",				false);
 user_pref("beacon.enabled",					false);
-user_pref("dom.event.clipboardevents.enabled",			false);
+user_pref("dom.event.clipboardevents.enabled",			true);
 user_pref("dom.allow_cut_copy", false);
 user_pref("device.sensors.enabled",				false);
 user_pref("browser.send_pings",					false);
